@@ -10,6 +10,7 @@
                     <div class="card-body text-center">
 
                         <h3>
+                            nome azienda:
                             {{ $singleTrain->factory }}
                         </h3>
 
@@ -27,20 +28,20 @@
                                 </span>
                             </li>
                             <li>
-                                Partenza:
+                                Data di partenza:
                                 <span>
                                     {{ $singleTrain->departure_time }}
                                 </span>
                             </li>
                             <li>
-                                Arrivo previsto:
+                                Data di arrivo:
                                 <span>
                                     {{ $singleTrain->arrival_time }}
                                 </span>
                             </li>
                             @if (!$singleTrain->in_time && !$singleTrain->deleted)
                                 <li>
-                                    Il treno purtroppo è in ritardo
+                                    Il treno è in ritardo
                                 </li>
                             @endif
                             @if (!$singleTrain->in_time && $singleTrain->deleted)
