@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('factory',64);
             $table->string('departure station',64)->charset('latin-1');
-            $table->string('arrival station',64)->charset('latin-1');
-            $table->float('departure time',4,2)->unsigned();
-            $table->float('arrival time',4,2)->unsigned();
-            $table->integer('train code',10)->unsigned();
-            $table->integer('number of coaches',2)->unsigned();
-            $table->boolean('in time')->default('true');
-            $table->boolean('deleted')->default('true');
+            $table->string('arrival station',64)->charset('latin-1');;
+            $table->dateTime('departure time');
+            $table->dateTime('arrival time');
+            $table->smallInteger('train code')->unsigned();
+            $table->smallInteger('number of coaches')->unsigned();
+            $table->boolean('in time')->default(true);
+            $table->boolean('deleted')->default(true);
             $table->timestamps();
         });
     }
